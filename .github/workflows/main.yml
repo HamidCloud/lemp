@@ -9,6 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: install docker-compose
+        run: |
+        package_update: true
+        package_upgrade: true
+
+        packages:
+        - docker.io
+        - docker-compose-plugin
+
+          runcmd:
+  # Add default user (ubuntu) to docker group
+          - usermod -aG docker ubuntu
+          - systemctl enable docker
+           - systemctl start docker
       - name: Build the Docker Images
         run: |
          docker-compose build
