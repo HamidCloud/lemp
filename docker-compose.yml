@@ -8,7 +8,7 @@ services:
     build:
       context: ./.docker/nginx
       dockerfile: Dockerfile
-    image: 139156132931.dkr.ecr.eu-north-1.amazonaws.com/web/nginximagess:${BUILD_NUMBER}  #The Build Number is GitHub Actions Pipeline Number. Each build will create a new tag.
+    image: 139156132931.dkr.ecr.eu-north-1.amazonaws.com/web/nginximages:${BUILD_NUMBER}  #The Build Number is GitHub Actions Pipeline Number. Each build will create a new tag.
     ports:
       - 80:80
     volumes:
